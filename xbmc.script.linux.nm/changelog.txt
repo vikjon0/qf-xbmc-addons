@@ -1,3 +1,6 @@
+[B]Version 0.1.1[/B]
+Fixed incorrect status message
+
 [B]Version 0.1.0[/B]
 More clean up in skin making it work in other skins than Confluence
 More general clean up

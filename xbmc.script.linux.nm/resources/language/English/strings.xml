@@ -45,6 +45,7 @@
   <string id="30123">Enter SSID</string>
   <string id="30124">Enter encryption (NONE, WEP or WPA)</string>
   <string id="30125">That is not a known encryption</string>
+  <string id="30126">Done</string>
   <string id="99999"></string>
 
 

@@ -130,7 +130,7 @@ class GUI(xbmcgui.WindowXMLDialog):
             self.status_label.setLabel(msg)
             self.updateList()
             
-            msg = getLS(30124) #Done
+            msg = getLS(30126) #Done
             self.status_label.setLabel(msg)
         
         #Delete button
@@ -148,7 +148,7 @@ class GUI(xbmcgui.WindowXMLDialog):
             #time.sleep(10)
             self.updateList()
             
-            msg = getLS(30124) #Done
+            msg = getLS(30126) #Done
             self.status_label.setLabel(msg)           
             self.setFocus(self.control_add_connection_button)
         
