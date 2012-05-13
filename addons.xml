@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="xbmc.script.linux.nm"
+<addon id="script.linux.nm"
        name="Network-Manager"
-       version="0.1.1"
+       version="0.1.2"
        provider-name="vikjon0">
   <requires>
     <import addon="xbmc.python" version="2.0"/>
