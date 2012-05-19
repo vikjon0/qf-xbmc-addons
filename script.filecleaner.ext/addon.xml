@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon
+    id="script.filecleaner.ext"
+    name="XBMC File Cleaner Ext"
+    version="0.0.1"
+    provider-name="vikjon0 based on the work of drewzh"
+    >
+  <requires>
+    <import addon="xbmc.python" version="1.0"/>
+  </requires>
+  <extension point="xbmc.service" library="default.py" start="login"></extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Regularly deletes old movie and tv files</summary>
+    <description lang="en">[B][I]READ BEFORE PROCEEDING[/I][/B]
+This addon has the potential to wipe your entire video collection! Please make sure you understand exactly what this addon is designed to do before enabling the file deletion capabilities in the settings. I will not be held responsible for loss of data due to user error OR error in the add-on.
+
+[B][I]MOD version[/I][/B]
+Modified by vikjon0 to support delete settings per tvshow. 
+Pending GUI, you have to config the settings in db manually or change default to delete and it will behave like the original.
+However, changing default AND apply exceptions can be very dangerous.
+
+[B][I]DESCRIPTION[/I][/B]
+This addon will automatically scan your library for watched TV shows and Movies and delete them from the file system based on numerous critia such as age, rating, free disk space, etc. All these options and more can be configured via the addon's settings. Also make sure you set the correct path to the disk you wish to check for free space, especially when you store your videos on a secondary drive or a network share.
+
+    </description>
+    
+    <platform>all</platform>
+  </extension>
+</addon>
+

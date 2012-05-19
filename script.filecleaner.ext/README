@@ -1,0 +1,29 @@
+__  _____ __  __  ___   ___ _ _        ___ _                       
+\ \/ / _ )  \/  |/ __| | __(_) |___   / __| |___ __ _ _ _  ___ _ _ 
+ >  <| _ \ |\/| | (__  | _|| | / -_) | (__| / -_) _` | ' \/ -_) '_|
+/_/\_\___/_|  |_|\___| |_| |_|_\___|  \___|_\___\__,_|_||_\___|_|  
+
+READ BEFORE PROCEEDING
+=====================================
+This addon has the potential to wipe your entire video collection! Please make sure you understand exactly what this addon is designed to do before enabling the file deletion capabilities in the settings. I will not be held responsible for loss of data due to user error OR errrors in the add-on.
+
+Show settings MOD
+==============================================
+Set up the shows in e.g. sqliteman. 
+Or change default to delete and it will work as the original addon (all shows monitored).
+However, do not change the default to delete AND apply exceptions in the database unless you are sure your know what your are doing.
+In case the database is lost, upgraded or recreated you will loss all your shows!
+
+attach '/home/vikjon0/.xbmc/userdata/Database/MyVideos34.db' as xbmc
+attach '/home/vikjon0/.xbmc/userdata/addon_data/script.filecleaner/addon.db' as addon
+
+--Add shows to montor (0=do not delete;1=delete;2=default)
+insert into tvshowsettings
+select idShow,c00,1 from tvshow
+where c00 like '%Blue%'
+
+DESCRIPTION
+=====================================
+This addon will automatically scan your library for watched TV shows and Movies and delete them from the file system based on numerous critia such as age, rating, free disk space, etc. All these options and more can be configured via the addon's settings. Also make sure you set the correct path to the disk you wish to check for free space, especially when you store your videos on a secondary drive or a network share.
+
+
