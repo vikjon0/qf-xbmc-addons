@@ -58,7 +58,6 @@ class Main:
         
         # Main service loop
         while (not xbmc.abortRequested and self.deletingEnabled):
-            ticker = ticker + 1
             self.reload_settings()
 
             if not self.deletingEnabled:
@@ -73,6 +72,7 @@ class Main:
                 ticker = 0
             
             time.sleep(self.service_sleep)
+            ticker = ticker + 1
             
         if xbmc.abortRequested:
             self.debug("Abort requested. Aborting")

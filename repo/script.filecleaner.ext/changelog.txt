@@ -1,3 +1,7 @@
+Version 0.0.3
+===============
+critical bug fix to interval calc
+
 Version 0.0.2
 ===============
 service loop sleep fixed to enable timely abort.

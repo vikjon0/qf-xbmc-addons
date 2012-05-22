@@ -2,7 +2,7 @@
 <addon
     id="script.filecleaner.ext"
     name="XBMC File Cleaner Ext"
-    version="0.0.2"
+    version="0.0.3"
     provider-name="vikjon0 based on the work of drewzh"
     >
   <requires>
