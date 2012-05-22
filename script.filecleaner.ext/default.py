@@ -29,7 +29,8 @@ addonPath = addon.getAddonInfo('path')
 addonUserdata = xbmc.translatePath(addon.getAddonInfo('profile'))
 
 class Main:
-    
+    service_sleep = 10
+
     def __init__(self):
         """
         Create a Main object that performs regular cleaning of watched videos.
@@ -48,15 +49,33 @@ class Main:
             self.notify(__settings__.getLocalizedString(34005))
         
         # wait delayedStart minutes upon startup
-        time.sleep(self.delayedStart * 60)
+        #time.sleep(self.delayedStart * 60)
+        
+        scanInterval_ticker = self.scanInterval * 60 / self.service_sleep
+        delayedStart_ticker = self.delayedStart * 60 / self.service_sleep
+        ticker = 0
+        delayed_completed = False
         
         # Main service loop
         while (not xbmc.abortRequested and self.deletingEnabled):
+            ticker = ticker + 1
             self.reload_settings()
-            self.cleanup()
+
+            if not self.deletingEnabled:
+                break
+
+            if delayed_completed == True and ticker == scanInterval_ticker:
+                self.cleanup()
+                ticker = 0
+            elif delayed_completed == False and ticker == delayedStart_ticker:
+                delayed_completed = True
+                self.cleanup()
+                ticker = 0
             
-            # wait for scanInterval minutes to rescan
-            time.sleep(self.scanInterval * 60)
+            time.sleep(self.service_sleep)
+            
+        if xbmc.abortRequested:
+            self.debug("Abort requested. Aborting")
         
         # Cleaning is disabled or abort is requested by XBMC, so do nothing
         self.notify(__settings__.getLocalizedString(34007))
